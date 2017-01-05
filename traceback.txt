@@ -1,0 +1,43 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/chapter_1.rpy", line 164, in script
+    "dan terus berjalan cukup cepat."
+IOError: Couldn't find file 'faststeps.wav'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/chapter_1.rpy", line 164, in script
+    "dan terus berjalan cukup cepat."
+  File "/home/rifqi/renpy/renpy/ast.py", line 613, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "/home/rifqi/renpy/renpy/exports.py", line 1142, in say
+    who(what, interact=interact)
+  File "/home/rifqi/renpy/renpy/character.py", line 876, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "/home/rifqi/renpy/renpy/character.py", line 715, in do_display
+    **display_args)
+  File "/home/rifqi/renpy/renpy/character.py", line 507, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/home/rifqi/renpy/renpy/ui.py", line 285, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/home/rifqi/renpy/renpy/display/core.py", line 2492, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "/home/rifqi/renpy/renpy/display/core.py", line 2791, in interact_core
+    renpy.audio.audio.interact()
+  File "/home/rifqi/renpy/renpy/audio/audio.py", line 930, in interact
+    periodic()
+  File "/home/rifqi/renpy/renpy/audio/audio.py", line 864, in periodic
+    c.periodic()
+  File "/home/rifqi/renpy/renpy/audio/audio.py", line 403, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "/home/rifqi/renpy/renpy/audio/audio.py", line 67, in load
+    rv = renpy.loader.load(fn)
+  File "/home/rifqi/renpy/renpy/loader.py", line 543, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'faststeps.wav'.
+
+Linux-4.4.0-57-generic-i686-athlon-with-debian-stretch-sid
+Ren'Py 6.99.12.2.2029
+ 
